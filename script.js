@@ -26,10 +26,16 @@
     });
 
     htmlEl.setAttribute("lang", lang);
-    document.title =
-      lang === "en"
-        ? "Marlon Decke-Cornill — Social media, corporate communications & AI"
-        : "Marlon Decke-Cornill — Social Media, Unternehmenskommunikation & KI";
+    // Pages that localize their own <title> (e.g. legal pages) carry data-de/-en
+    // on the title element and are handled by the loop above. Only the homepage,
+    // whose <title> has no such attributes, gets this hardcoded title.
+    const titleEl = document.querySelector("title");
+    if (!titleEl || (!titleEl.hasAttribute("data-de") && !titleEl.hasAttribute("data-en"))) {
+      document.title =
+        lang === "en"
+          ? "Marlon Decke-Cornill — Social media, corporate communications & AI"
+          : "Marlon Decke-Cornill — Social Media, Unternehmenskommunikation & KI";
+    }
 
     buttons.forEach((btn) => {
       const isActive = btn.dataset.lang === lang;

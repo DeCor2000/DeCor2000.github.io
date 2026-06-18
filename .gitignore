@@ -8,3 +8,6 @@ Icon?
 *.swp
 *~
 Thumbs.db
+
+# Claude Code (local, machine-specific)
+.claude/settings.local.json
