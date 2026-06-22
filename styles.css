@@ -658,63 +658,68 @@ main, header, footer { position: relative; z-index: 2; }
   color: var(--ink);
 }
 
-/* ───────── testimonial / proof quote ───────── */
-.testimonial {
-  position: relative;
+/* ───────── recommendation card (LinkedIn-inspired) ───────── */
+.reco {
   margin: 0;
-  max-width: 56rem;
-  padding: 1.5rem 1.6rem 1.5rem 2.6rem;
-  background: rgba(180, 89, 61, 0.06);
-  border-left: 2px solid var(--terracotta);
+  max-width: 46rem;
+  padding: clamp(1.4rem, 2.5vw, 1.9rem);
+  background: #FBF8F1;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.05), 0 14px 34px -20px rgba(26, 23, 20, 0.4);
 }
-.testimonial__mark {
-  position: absolute;
-  left: 0.85rem;
-  top: 0.55rem;
-  font-family: var(--serif);
-  font-size: 3.4rem;
-  line-height: 1;
-  color: var(--terracotta);
-  opacity: 0.32;
-  pointer-events: none;
-}
-.testimonial__label {
-  display: block;
+.reco__tag {
+  display: inline-block;
   font-family: var(--sans);
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--terracotta-deep);
-  font-weight: 500;
-  margin-bottom: 0.7rem;
-}
-.testimonial__quote {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(1.05rem, 1.55vw, 1.2rem);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  margin: 0;
-}
-.testimonial__cite {
-  display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  margin-top: 1.05rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--hairline);
-}
-.testimonial__name {
-  font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
+  color: var(--terracotta-deep);
+  margin-bottom: 1.1rem;
+}
+.reco__head {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.reco__avatar {
+  flex: 0 0 auto;
+  width: 3rem; height: 3rem;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center 30%;
+  background: var(--sand);
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+.reco__id { display: flex; flex-direction: column; gap: 0.12rem; min-width: 0; }
+.reco__name {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--ink);
 }
-.testimonial__role {
+.reco__role {
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.reco__meta {
+  font-family: var(--sans);
+  font-size: 0.74rem;
   color: var(--ink-mute);
+  margin-top: 0.1rem;
+}
+.reco__quote {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.04rem, 1.5vw, 1.18rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
 }
 
 /* ───────── metrics row ───────── */
